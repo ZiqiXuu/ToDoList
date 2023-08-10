@@ -11,8 +11,8 @@ import {
 
 export const fetchTasks = () => async dispatch => {
     try {
-        let res1 = await axios.get(`${BASE_URL}/todos?done=false`)
-        let res2 = await axios.get(`${BASE_URL}/todos?done=true`)
+        let res1 = await axios.get(`${BASE_URL}/?done=false`)
+        let res2 = await axios.get(`${BASE_URL}/?done=true`)
 
         dispatch({
             type: FETCH_TASKS,
@@ -23,14 +23,13 @@ export const fetchTasks = () => async dispatch => {
     }
 }
 
-export const addTask = (name, isChecked) => async dispatch => {
+export const addTask = (name) => async dispatch => {
     const postBody = {
         todoName: name,
-        isChecked: isChecked
     }
 
     try {
-        let res = await axios.post(`${BASE_URL}/todos/insert`, postBody)
+        let res = await axios.post(`${BASE_URL}/insert`, postBody)
 
         dispatch({
             type: ADD_TASK,
@@ -43,7 +42,7 @@ export const addTask = (name, isChecked) => async dispatch => {
 
 export const deleteAllTasks = () => async dispatch => {
     try {
-        let res = await axios.delete(`${BASE_URL}/todos/delete`)
+        let res = await axios.delete(`${BASE_URL}/delete`)
 
         dispatch({
             type: DELETE_ALL_TASKS,
@@ -59,7 +58,7 @@ export const updateTask = (id, isChecked) => async dispatch => {
         isChecked: isChecked
     }
     try {
-        let res = await axios.put(`${BASE_URL}/todos/${id}`, postBody)
+        let res = await axios.put(`${BASE_URL}/${id}`, postBody)
         dispatch({
             type: UPDATE_TASK,
             payload: res.data,
@@ -72,8 +71,8 @@ export const updateTask = (id, isChecked) => async dispatch => {
 export const searchTask = (searchKey) => async dispatch => {
     const key = searchKey.trim()
     try {
-        let res1 = await axios.get(`${BASE_URL}/todos/search?keyword=${key}&done=false`)
-        let res2 = await axios.get(`${BASE_URL}/todos/search?keyword=${key}&done=true`)
+        let res1 = await axios.get(`${BASE_URL}/search?keyword=${key}&done=false`)
+        let res2 = await axios.get(`${BASE_URL}/search?keyword=${key}&done=true`)
 
         dispatch({
             type: SEARCH_TASKS,
