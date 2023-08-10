@@ -1,0 +1,15 @@
+.App {
+    text-align: center;
+    margin: 20px auto;
+    width: 70%;
+    font-family: 'Comic Sans MS', cursive;
+}
+
+.paper {
+    min-height: 500px;
+    padding: 10px 30px;
+}
+
+.taskList {
+    margin: 30px 0;
+}

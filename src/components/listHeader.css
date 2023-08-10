@@ -1,0 +1,14 @@
+.listHeader {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.inputField {
+    display: flex;
+    justify-content: space-between;
+}
+
+.addField {
+    margin-right: 10px;
+}

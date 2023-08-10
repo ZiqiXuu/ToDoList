@@ -1,0 +1,28 @@
+.taskListContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.listTitle {
+    width: 90%;
+    border-bottom: 2px solid grey;
+    padding: 10px;
+    font-weight: bolder;
+}
+
+.task {
+    display: flex;
+    padding: 2px 0;
+}
+
+.taskList {
+    width: 100%;
+}
+
+.taskName {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
